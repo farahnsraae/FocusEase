@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/popup_menu_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background akan otomatis mengikuti theme -->
+    <solid android:color="?attr/colorSurface" />
+    <corners android:radius="8dp" />
+    <padding
+        android:left="0dp"
+        android:top="8dp"
+        android:right="0dp"
+        android:bottom="8dp" />
+</shape>

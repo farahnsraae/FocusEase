@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Bulan sabit -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M21,12.79A9,9 0 0,1 11.21,3a7,7 0 1,0 9.79,9.79z" />
+    <!-- Bintang kecil -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,4l0.94,1.88L20,6.26l-1.5,1.46L18.88,9.6 17,8.7l-1.88,0.9 0.38,-1.88L14,6.26l2.06,-0.38z" />
+</vector>

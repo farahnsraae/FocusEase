@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">FocusEase</string>
+
+    <!-- Calendar Dates -->
+    <string name="date_20">20</string>
+    <string name="day_20">Mon</string>
+    <string name="date_21">21</string>
+    <string name="day_21">Tue</string>
+    <string name="date_22">22</string>
+    <string name="day_22">Wed</string>
+    <string name="date_23">23</string>
+    <string name="day_23">Thr</string>
+    <string name="date_24">24</string>
+    <string name="day_24">Fri</string>
+    <string name="date_25">25</string>
+    <string name="day_25">Sat</string>
+
+    <!-- Profile -->
+    <string name="profile">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="notifications">Notifications</string>
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="help_support">Help &amp; Support</string>
+    <string name="about">About</string>
+    <string name="logout">Logout</string>
+
+    <!-- Account Settings -->
+    <string name="account_settings">Account Settings</string>
+    <string name="app_settings">App Settings</string>
+
+    <!-- Edit Profile Dialog -->
+    <string name="enter_new_username">Enter new username</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="profile_updated">Profile updated successfully</string>
+    <string name="username_empty">Username cannot be empty</string>
+
+    <!-- Change Password Dialog -->
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm New Password</string>
+    <string name="change">Change</string>
+    <string name="fill_all_fields">Please fill in all fields</string>
+    <string name="old_password_incorrect">Old password is incorrect</string>
+    <string name="passwords_not_match">New passwords do not match</string>
+    <string name="password_min_length">Password must be at least 6 characters</string>
+    <string name="password_changed">Password changed successfully</string>
+
+    <!-- Theme Dialog -->
+    <string name="select_theme">Select Theme</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="theme_changed">Theme changed to</string>
+
+    <!-- Language Dialog -->
+    <string name="select_language">Select Language</string>
+
+    <!-- Help & Support Dialog -->
+    <string name="help_support_title">Help &amp; Support - FocusEase</string>
+    <string name="help_support_content">Welcome to FocusEase Help &amp; Support!\n\n📧 Email: support@focusease.com\n🌐 Website: www.focusease.com\n📱 Phone: +62 123-4567-890\n\nFeatures:\n• Pomodoro Timer\n• Task Management\n• Focus Statistics\n• Study Session Tracking\n\nFor more help, visit our FAQ section or contact our support team.</string>
+
+    <!-- About Dialog -->
+    <string name="about_title">About FocusEase</string>
+    <string name="about_content">FocusEase v1.0.0\n\nFocusEase is a productivity app designed to help you maintain focus and manage your time effectively using the Pomodoro Technique.\n\nOur mission is to help students and professionals achieve their goals through better focus and time management.\n\nFeatures:\n✓ Pomodoro Timer\n✓ Task Management\n✓ Progress Tracking\n✓ Statistics &amp; Reports\n\n© 2024 FocusEase Team\nAll rights reserved.\n\nMade with ❤️ for productivity enthusiasts</string>
+
+    <!-- Logout Dialog -->
+    <string name="logout_confirmation">Are you sure you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logged_out">Logged out successfully</string>
+
+    <!-- ============================================ -->
+    <!-- INDONESIAN TRANSLATION (values-id) -->
+    <!-- ============================================ -->
+
+    <!-- Profile (Indonesia) -->
+    <string name="profile_id">Profil</string>
+    <string name="edit_profile_id">Edit Profil</string>
+    <string name="change_password_id">Ubah Kata Sandi</string>
+    <string name="notifications_id">Notifikasi</string>
+    <string name="theme_id">Tema</string>
+    <string name="language_id">Bahasa</string>
+    <string name="help_support_id">Bantuan &amp; Dukungan</string>
+    <string name="about_id">Tentang</string>
+    <string name="logout_id">Keluar</string>
+
+    <!-- Account Settings (Indonesia) -->
+    <string name="account_settings_id">Pengaturan Akun</string>
+    <string name="app_settings_id">Pengaturan Aplikasi</string>
+
+    <!-- Edit Profile Dialog (Indonesia) -->
+    <string name="enter_new_username_id">Masukkan nama pengguna baru</string>
+    <string name="save_id">Simpan</string>
+    <string name="cancel_id">Batal</string>
+    <string name="profile_updated_id">Profil berhasil diperbarui</string>
+    <string name="username_empty_id">Nama pengguna tidak boleh kosong</string>
+
+    <!-- Change Password Dialog (Indonesia) -->
+    <string name="old_password_id">Kata Sandi Lama</string>
+    <string name="new_password_id">Kata Sandi Baru</string>
+    <string name="confirm_password_id">Konfirmasi Kata Sandi Baru</string>
+    <string name="change_id">Ubah</string>
+    <string name="fill_all_fields_id">Harap isi semua kolom</string>
+    <string name="old_password_incorrect_id">Kata sandi lama salah</string>
+    <string name="passwords_not_match_id">Kata sandi baru tidak cocok</string>
+    <string name="password_min_length_id">Kata sandi minimal 6 karakter</string>
+    <string name="password_changed_id">Kata sandi berhasil diubah</string>
+
+    <!-- Theme Dialog (Indonesia) -->
+    <string name="select_theme_id">Pilih Tema</string>
+    <string name="light_theme_id">Tema Terang</string>
+    <string name="dark_theme_id">Tema Gelap</string>
+    <string name="theme_changed_id">Tema diubah menjadi</string>
+
+    <!-- Language Dialog (Indonesia) -->
+    <string name="select_language_id">Pilih Bahasa</string>
+
+    <!-- Help & Support Dialog (Indonesia) -->
+    <string name="help_support_title_id">Bantuan &amp; Dukungan - FocusEase</string>
+    <string name="help_support_content_id">Selamat datang di Bantuan &amp; Dukungan FocusEase!\n\n📧 Email: support@focusease.com\n🌐 Website: www.focusease.com\n📱 Telepon: +62 123-4567-890\n\nFitur:\n• Timer Pomodoro\n• Manajemen Tugas\n• Statistik Fokus\n• Pelacakan Sesi Belajar\n\nUntuk bantuan lebih lanjut, kunjungi bagian FAQ kami atau hubungi tim dukungan kami.</string>
+
+    <!-- About Dialog (Indonesia) -->
+    <string name="about_title_id">Tentang FocusEase</string>
+    <string name="about_content_id">FocusEase v1.0.0\n\nFocusEase adalah aplikasi produktivitas yang dirancang untuk membantu Anda mempertahankan fokus dan mengelola waktu secara efektif menggunakan Teknik Pomodoro.\n\nMisi kami adalah membantu siswa dan profesional mencapai tujuan mereka melalui fokus dan manajemen waktu yang lebih baik.\n\nFitur:\n✓ Timer Pomodoro\n✓ Manajemen Tugas\n✓ Pelacakan Kemajuan\n✓ Statistik &amp; Laporan\n\n© 2024 Tim FocusEase\nSemua hak dilindungi.\n\nDibuat dengan ❤️ untuk para penggemar produktivitas</string>
+
+    <!-- Logout Dialog (Indonesia) -->
+    <string name="logout_confirmation_id">Apakah Anda yakin ingin keluar?</string>
+    <string name="yes_id">Ya</string>
+    <string name="no_id">Tidak</string>
+    <string name="logged_out_id">Berhasil keluar</string>
+
+    <!-- ============================================ -->
+    <!-- KOREAN TRANSLATION (values-ko) -->
+    <!-- ============================================ -->
+
+    <!-- Profile (Korea) -->
+    <string name="profile_ko">프로필</string>
+    <string name="edit_profile_ko">프로필 편집</string>
+    <string name="change_password_ko">비밀번호 변경</string>
+    <string name="notifications_ko">알림</string>
+    <string name="theme_ko">테마</string>
+    <string name="language_ko">언어</string>
+    <string name="help_support_ko">도움말 및 지원</string>
+    <string name="about_ko">정보</string>
+    <string name="logout_ko">로그아웃</string>
+
+    <!-- Account Settings (Korea) -->
+    <string name="account_settings_ko">계정 설정</string>
+    <string name="app_settings_ko">앱 설정</string>
+
+    <!-- Edit Profile Dialog (Korea) -->
+    <string name="enter_new_username_ko">새 사용자 이름 입력</string>
+    <string name="save_ko">저장</string>
+    <string name="cancel_ko">취소</string>
+    <string name="profile_updated_ko">프로필이 성공적으로 업데이트되었습니다</string>
+    <string name="username_empty_ko">사용자 이름은 비워둘 수 없습니다</string>
+
+    <!-- Change Password Dialog (Korea) -->
+    <string name="old_password_ko">이전 비밀번호</string>
+    <string name="new_password_ko">새 비밀번호</string>
+    <string name="confirm_password_ko">새 비밀번호 확인</string>
+    <string name="change_ko">변경</string>
+    <string name="fill_all_fields_ko">모든 필드를 입력해주세요</string>
+    <string name="old_password_incorrect_ko">이전 비밀번호가 올바르지 않습니다</string>
+    <string name="passwords_not_match_ko">새 비밀번호가 일치하지 않습니다</string>
+    <string name="password_min_length_ko">비밀번호는 최소 6자 이상이어야 합니다</string>
+    <string name="password_changed_ko">비밀번호가 성공적으로 변경되었습니다</string>
+
+    <!-- Theme Dialog (Korea) -->
+    <string name="select_theme_ko">테마 선택</string>
+    <string name="light_theme_ko">라이트 테마</string>
+    <string name="dark_theme_ko">다크 테마</string>
+    <string name="theme_changed_ko">테마가 변경되었습니다:</string>
+
+    <!-- Language Dialog (Korea) -->
+    <string name="select_language_ko">언어 선택</string>
+
+    <!-- Help & Support Dialog (Korea) -->
+    <string name="help_support_title_ko">도움말 및 지원 - FocusEase</string>
+    <string name="help_support_content_ko">FocusEase 도움말 및 지원에 오신 것을 환영합니다!\n\n📧 이메일: support@focusease.com\n🌐 웹사이트: www.focusease.com\n📱 전화: +62 123-4567-890\n\n기능:\n• 포모도로 타이머\n• 작업 관리\n• 집중 통계\n• 학습 세션 추적\n\n자세한 도움말은 FAQ 섹션을 방문하거나 지원 팀에 문의하세요.</string>
+
+    <!-- About Dialog (Korea) -->
+    <string name="about_title_ko">FocusEase 정보</string>
+    <string name="about_content_ko">FocusEase v1.0.0\n\nFocusEase는 포모도로 기법을 사용하여 집중력을 유지하고 시간을 효과적으로 관리하는 데 도움을 주는 생산성 앱입니다.\n\n우리의 사명은 학생과 전문가가 더 나은 집중력과 시간 관리를 통해 목표를 달성할 수 있도록 돕는 것입니다.\n\n기능:\n✓ 포모도로 타이머\n✓ 작업 관리\n✓ 진행 상황 추적\n✓ 통계 및 보고서\n\n© 2024 FocusEase 팀\n모든 권리 보유.\n\n생산성 애호가를 위해 ❤️로 만들었습니다</string>
+
+    <!-- Logout Dialog (Korea) -->
+    <string name="logout_confirmation_ko">로그아웃 하시겠습니까?</string>
+    <string name="yes_ko">예</string>
+    <string name="no_ko">아니오</string>
+    <string name="logged_out_ko">성공적으로 로그아웃되었습니다</string>
+</resources>

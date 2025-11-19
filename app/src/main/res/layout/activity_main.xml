@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hi, Farah"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Have a nice day"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
+
+        <ImageView
+            android:id="@+id/ivMenu"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_more_vert"
+            android:padding="12dp"
+            android:background="@drawable/menu_icon_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle" />
+
+        <HorizontalScrollView
+            android:id="@+id/dateScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Item Tanggal 1: Layout marginEnd digunakan untuk jarak yang konsisten -->
+                <include layout="@layout/item_date"
+                    android:id="@+id/date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Item Tanggal 2 -->
+                <include layout="@layout/item_date"
+                    android:id="@+id/date2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Item Tanggal 3 -->
+                <include layout="@layout/item_date"
+                    android:id="@+id/date3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Item Tanggal 4 (Default Selected) -->
+                <include layout="@layout/item_date"
+                    android:id="@+id/date4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Item Tanggal 5 -->
+                <include layout="@layout/item_date"
+                    android:id="@+id/date5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- Item Tanggal 6 (Tidak ada marginEnd) -->
+                <include layout="@layout/item_date"
+                    android:id="@+id/date6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tvDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dashboard"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateScrollView" />
+
+        <TextView
+            android:id="@+id/tvSeeMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See More"
+            android:textSize="14sp"
+            android:textColor="#7E57C2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDashboard"
+            app:layout_constraintBottom_toBottomOf="@id/tvDashboard" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardWakeUp"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFF9E5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cardSleepRegularity"
+            app:layout_constraintTop_toBottomOf="@id/tvDashboard"
+            app:layout_constraintWidth_percent="0.48">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/ivSun"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/ic_sun"
+                    android:padding="8dp"
+                    android:background="@drawable/circle_bg_yellow" />
+
+                <TextView
+                    android:id="@+id/tvWakeTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7:00"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    android:textColor="#C4941A"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wake up"
+                    android:textSize="14sp"
+                    android:textColor="#C4941A"
+                    android:layout_below="@id/tvWakeTime"
+                    android:layout_alignParentStart="true"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSleepRegularity"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="8dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#E8E5F5"
+            app:layout_constraintStart_toEndOf="@id/cardWakeUp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cardWakeUp"
+            app:layout_constraintWidth_percent="0.48">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/ivMoon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/ic_moon"
+                    android:padding="8dp"
+                    android:background="@drawable/circle_bg_purple" />
+
+                <TextView
+                    android:id="@+id/tvRegularityHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="43h"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    android:textColor="#5E35B1"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sleep Regularity"
+                    android:textSize="12sp"
+                    android:textColor="#5E35B1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDeepQuality"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFE5E5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cardDuration"
+            app:layout_constraintTop_toBottomOf="@id/cardWakeUp"
+            app:layout_constraintWidth_percent="0.48">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/ivSleep"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/ic_sleep"
+                    android:padding="8dp"
+                    android:background="@drawable/circle_bg_pink" />
+
+                <RelativeLayout
+                    android:id="@+id/circleProgress"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_centerInParent="true">
+
+                    <ProgressBar
+                        android:id="@+id/progressCircle"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:max="100"
+                        android:progress="64"
+                        android:progressDrawable="@drawable/circular_progress"
+                        android:indeterminate="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="64 / 100"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#C75B7A"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deep Quality"
+                    android:textSize="14sp"
+                    android:textColor="#C75B7A"
+                    android:layout_alignParentBottom="true" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDuration"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="8dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#D5E8F7"
+            app:layout_constraintStart_toEndOf="@id/cardDeepQuality"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cardDeepQuality"
+            app:layout_constraintWidth_percent="0.48">
+
+            <!-- ConstraintLayout untuk kontrol posisi yang lebih baik (ic_wave di tengah) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+                <!-- Icon Durasi -->
+                <ImageView
+                    android:id="@+id/ivDuration"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_duration"
+                    android:padding="8dp"
+                    android:background="@drawable/circle_bg_blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Jam Durasi -->
+                <TextView
+                    android:id="@+id/tvDurationHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7h"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    android:textColor="#3F72AF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/ivWave"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Wave Graph (Diangkat dan diposisikan di tengah) -->
+                <ImageView
+                    android:id="@+id/ivWave"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_wave"
+                    app:layout_constraintTop_toBottomOf="@id/tvDurationHours"
+                    app:layout_constraintBottom_toTopOf="@id/tvDurationLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="-20dp"
+                    android:layout_marginBottom="18dp" />
+
+                <!-- Label Durasi -->
+                <TextView
+                    android:id="@+id/tvDurationLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration Sleep"
+                    android:textSize="14sp"
+                    android:textColor="#3F72AF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bottomNav"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="35dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#7E57C2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardDeepQuality"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent="0.85">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/navHome"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_home"
+                    android:padding="4dp" />
+
+                <ImageView
+                    android:id="@+id/navMusic"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_music"
+                    android:padding="4dp" />
+
+                <ImageView
+                    android:id="@+id/navClock"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_clock"
+                    android:padding="4dp" />
+
+                <ImageView
+                    android:id="@+id/navProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_profile"
+                    android:padding="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

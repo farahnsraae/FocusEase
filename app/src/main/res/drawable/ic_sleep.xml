@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Huruf Z kecil -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6,14h4l-4,4h4v2H4l4,-4H4v-2z" />
+    <!-- Huruf Z besar -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,6h6l-6,6h6v2h-8l6,-6h-6V6z" />
+</vector>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            android:padding="8dp"
+            android:background="@drawable/circle_white_bg"
+            android:contentDescription="Back" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarms"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <!-- Alarms List -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/addNewSection"
+        android:padding="24dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/alarmsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Add New Section -->
+    <LinearLayout
+        android:id="@+id/addNewSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomNavigation"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/btnAddAlarm"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_add"
+            android:background="@drawable/circle_purple_light_bg"
+            android:padding="16dp"
+            android:contentDescription="Add New Alarm"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New"
+            android:textSize="16sp"
+            android:textColor="#B4A5C7"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="24dp"
+        android:background="@drawable/bottom_nav_bg"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="Home"
+                android:src="@drawable/ic_home" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navMusic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="Music"
+                android:src="@drawable/ic_music" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navClock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="Clock"
+                android:src="@drawable/ic_clock_active" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="Profile"
+                android:src="@drawable/ic_profile" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

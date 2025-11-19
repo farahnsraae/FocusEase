@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="false"
+    android:background="@android:color/transparent"
+    android:scrollbars="vertical"
+    android:overScrollMode="always"
+    tools:context=".RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:paddingBottom="24dp">
+
+        <!-- HEADER UNGU -->
+        <View
+            android:id="@+id/topPurple"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:background="@drawable/top_curve_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- LOGO -->
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="160dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="48dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/logo__1_"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- KARTU PUTIH -->
+        <LinearLayout
+            android:id="@+id/registerCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@drawable/white_card_bg"
+            android:elevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/logoIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- JUDUL -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textColor="#774FB5"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:layout_gravity="center"
+                android:shadowColor="#D609A6"
+                android:shadowDx="0"
+                android:shadowDy="6"
+                android:shadowRadius="6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start your focus journey"
+                android:textColor="#7B3EFF"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp" />
+
+            <!-- USERNAME -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="#7B3EFF"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter your username"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="16dp"
+                android:textColor="#000"
+                android:textColorHint="#8A56AC"
+                android:background="@drawable/edittext_border_username"
+                android:layout_marginBottom="16dp" />
+
+            <!-- PASSWORD -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="#7B3EFF"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter your password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="16dp"
+                android:textColor="#000"
+                android:textColorHint="#8A56AC"
+                android:background="@drawable/edittext_border_password"
+                android:layout_marginBottom="24dp" />
+
+            <!-- BUTTON -->
+            <TextView
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:background="@drawable/btn_shadow_bg"
+                android:shadowColor="#FF69B4"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:layerType="software" />
+
+        </LinearLayout>
+
+        <!-- LINK SIGN IN -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/registerCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? "
+                android:textColor="#000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvSignInLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign in"
+                android:textColor="#D609A6"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

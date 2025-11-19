@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Bayangan (di bawah tombol) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#D609A6"/> <!-- warna bayangan -->
+            <corners android:radius="12dp"/>
+        </shape>
+    </item>
+
+    <!-- Tombol utama -->
+    <item android:bottom="5dp"> <!-- geser ke atas supaya bayangan muncul di bawah -->
+        <shape android:shape="rectangle">
+            <solid android:color="#774FB5"/> <!-- warna tombol -->
+            <corners android:radius="12dp"/>
+        </shape>
+    </item>
+</layer-list>

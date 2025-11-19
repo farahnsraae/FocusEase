@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Theme FocusEase -->
+    <style name="Theme.FocusEase" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorSecondary">@color/purple_500</item>
+        <item name="colorTertiary">@color/orange_500</item>
+
+        <!-- Background dan teks -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+
+        <!-- Font -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
+
+        <!-- Tambahan -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+
+        <!-- PopupMenu Style -->
+        <item name="popupMenuStyle">@style/PopupMenuStyle</item>
+    </style>
+
+    <!-- PopupMenu Style -->
+    <style name="PopupMenuStyle" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">?attr/colorSurface</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+</resources>
