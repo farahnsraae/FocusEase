@@ -27,10 +27,12 @@ import androidx.cardview.widget.CardView
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import com.example.focusease.ui.pomodoro.PomodoroTimerActivity
 
 class ClockActivity : AppCompatActivity() {
 
     private lateinit var btnBack: ImageView
+    private lateinit var btnMenu: ImageView
     private lateinit var btnAddAlarm: ImageView
     private lateinit var alarmsContainer: LinearLayout
 
@@ -68,20 +70,26 @@ class ClockActivity : AppCompatActivity() {
         setupListeners()
         setupBottomNavigation()
 
-        // ✅ Load alarms dari storage
         loadAlarmsFromStorage()
 
-        // Kalau belum ada alarm, buat default
         if (alarmsList.isEmpty()) {
             addDefaultAlarms()
             saveAlarmsToStorage()
         }
 
-        // ✅ REGISTER RECEIVER
+        // ✅ REGISTRASI RECEIVER - INI YANG DIPERBAIKI
         val filter = IntentFilter("com.example.focusease.TURN_OFF_ALARM")
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            registerReceiver(turnOffAlarmReceiver, filter, Context.RECEIVER_NOT_EXPORTED)
+            // Android 13+ (API 33+)
+            registerReceiver(
+                turnOffAlarmReceiver,
+                filter,
+                Context.RECEIVER_NOT_EXPORTED
+            )
         } else {
+            // Android 12 ke bawah (API < 33)
+            @Suppress("UnspecifiedRegisterReceiverFlag")
             registerReceiver(turnOffAlarmReceiver, filter)
         }
     }
@@ -151,6 +159,7 @@ class ClockActivity : AppCompatActivity() {
 
     private fun initViews() {
         btnBack = findViewById(R.id.btnBack)
+        btnMenu = findViewById(R.id.btnMenu)
         btnAddAlarm = findViewById(R.id.btnAddAlarm)
         alarmsContainer = findViewById(R.id.alarmsContainer)
     }
@@ -166,9 +175,65 @@ class ClockActivity : AppCompatActivity() {
             finish()
         }
 
+        btnMenu.setOnClickListener {
+            showTopMenu(it)
+        }
+
         btnAddAlarm.setOnClickListener {
             showTimePickerDialog()
         }
+    }
+
+    private fun showTopMenu(view: View) {
+        val wrapper = android.view.ContextThemeWrapper(
+            this,
+            androidx.appcompat.R.style.Theme_AppCompat_Light
+        )
+
+        val popupMenu = PopupMenu(
+            wrapper,
+            view,
+            Gravity.NO_GRAVITY,
+            0,
+            androidx.appcompat.R.style.Widget_AppCompat_Light_PopupMenu
+        )
+
+        popupMenu.menuInflater.inflate(R.menu.clock_menu, popupMenu.menu)
+
+        // Force show icons
+        try {
+            val popup = PopupMenu::class.java.getDeclaredField("mPopup")
+            popup.isAccessible = true
+            val menu = popup.get(popupMenu)
+            menu.javaClass
+                .getDeclaredMethod("setForceShowIcon", Boolean::class.java)
+                .invoke(menu, true)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        // Tint icons
+        for (i in 0 until popupMenu.menu.size()) {
+            val item = popupMenu.menu.getItem(i)
+            item.icon?.setTint(Color.BLACK)
+        }
+
+        popupMenu.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_pomodoro -> {
+                    val intent = Intent(this, PomodoroTimerActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_alarm -> {
+                    Toast.makeText(this, "Already in Alarm page", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
+            }
+        }
+
+        popupMenu.show()
     }
 
     private fun showTimePickerDialog(existingAlarm: AlarmData? = null) {
@@ -350,7 +415,7 @@ class ClockActivity : AppCompatActivity() {
                 setAlarm(alarm)
             }
 
-            saveAlarmsToStorage() // ✅ SAVE
+            saveAlarmsToStorage()
 
             Toast.makeText(this, "Alarm saved!", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
@@ -401,7 +466,7 @@ class ClockActivity : AppCompatActivity() {
         val alarm = AlarmData(alarmId, hour, minute, isActive, colorPair.first, colorPair.second)
         alarmsList.add(alarm)
         createAlarmView(alarm)
-        saveAlarmsToStorage() // ✅ SAVE
+        saveAlarmsToStorage()
     }
 
     private fun createAlarmView(alarm: AlarmData) {
@@ -513,7 +578,7 @@ class ClockActivity : AppCompatActivity() {
                 Toast.makeText(this, "Alarm ${formatTime(alarm.hour, alarm.minute)} OFF", Toast.LENGTH_SHORT).show()
             }
 
-            saveAlarmsToStorage() // ✅ SAVE
+            saveAlarmsToStorage()
         }
 
         topLayout.addView(timeLayout)
@@ -620,7 +685,7 @@ class ClockActivity : AppCompatActivity() {
         cancelAlarm(alarm)
         alarmsList.remove(alarm)
         refreshAlarmsList()
-        saveAlarmsToStorage() // ✅ SAVE
+        saveAlarmsToStorage()
         Toast.makeText(this, "Alarm deleted", Toast.LENGTH_SHORT).show()
     }
 

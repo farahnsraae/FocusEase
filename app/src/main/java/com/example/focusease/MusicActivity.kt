@@ -28,34 +28,60 @@ class MusicActivity : AppCompatActivity() {
     private lateinit var btnRewind: ImageView
     private lateinit var btnForward: ImageView
     private lateinit var seekBarMusic: SeekBar
+    private lateinit var tvPlaylistTitle: TextView
+    private lateinit var ivAlbumArt: ImageView
+
+    // Semua card playlist
     private lateinit var cardStudyingMood: CardView
     private lateinit var cardDayMood: CardView
-    private lateinit var tvPlaylistTitle: TextView
-    private lateinit var ivAlbumArt: ImageView  // Tambahkan ini
+    private lateinit var cardDeepStudyZone: CardView
+    private lateinit var cardDaylightEnergy: CardView
+    private lateinit var cardNightChill: CardView
+    private lateinit var cardHappyDay: CardView
+    private lateinit var cardBrightDawn: CardView
+    private lateinit var cardQuietStudy: CardView
 
     private var mediaPlayer: MediaPlayer? = null
     private var isPlaying = false
     private var isFavorite = false
     private val handler = Handler(Looper.getMainLooper())
 
-    // Daftar musik
+    // Daftar musik - tambahkan file musik baru Anda di sini
     private val musicList = listOf(
         R.raw.morning_music,
         R.raw.studying_mood,
-        R.raw.day_mood
+        R.raw.day_mood,
+        R.raw.deep_study_zone,
+        R.raw.daylight_energy,
+        R.raw.night_chill,
+        R.raw.happy_day,
+        R.raw.bright_dawn,
+        R.raw.quiet_study
     )
 
     private val musicTitles = listOf(
         "Morning Playlist",
         "Studying Mood",
-        "Day Mood"
+        "Day Mood",
+        "Deep Study Zone",
+        "Daylight Energy",
+        "Night Chill",
+        "Happy Day",
+        "Bright Dawn",
+        "Quiet Study"
     )
 
     // Daftar cover gambar untuk setiap lagu
     private val albumCovers = listOf(
         R.drawable.morning_music_cover,
         R.drawable.studying_mood_cover,
-        R.drawable.day_mood_cover
+        R.drawable.day_mood_cover,
+        R.drawable.deep_study_zone_cover,
+        R.drawable.daylight_energy_cover,
+        R.drawable.night_chill_cover,
+        R.drawable.happy_day_cover,
+        R.drawable.bright_dawn_cover,
+        R.drawable.quiet_study_cover
     )
 
     private var currentMusicIndex = 0
@@ -81,10 +107,18 @@ class MusicActivity : AppCompatActivity() {
         btnRewind = findViewById(R.id.btnRewind)
         btnForward = findViewById(R.id.btnForward)
         seekBarMusic = findViewById(R.id.seekBarMusic)
+        tvPlaylistTitle = findViewById(R.id.tvPlaylistTitle)
+        ivAlbumArt = findViewById(R.id.ivAlbumArt)
+
+        // Inisialisasi semua card
         cardStudyingMood = findViewById(R.id.cardStudyingMood)
         cardDayMood = findViewById(R.id.cardDayMood)
-        tvPlaylistTitle = findViewById(R.id.tvPlaylistTitle)
-        ivAlbumArt = findViewById(R.id.ivAlbumArt)  // Inisialisasi
+        cardDeepStudyZone = findViewById(R.id.cardDeepStudyZone)
+        cardDaylightEnergy = findViewById(R.id.cardDaylightEnergy)
+        cardNightChill = findViewById(R.id.cardNightChill)
+        cardHappyDay = findViewById(R.id.cardHappyDay)
+        cardBrightDawn = findViewById(R.id.cardBrightDawn)
+        cardQuietStudy = findViewById(R.id.cardQuietStudy)
     }
 
     private fun loadMusic(index: Int) {
@@ -176,14 +210,45 @@ class MusicActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
+        // Listener untuk semua card playlist
         cardStudyingMood.setOnClickListener {
             loadMusic(1)  // Index 1 = Studying Mood
-            playMusic()   // Langsung play
+            playMusic()
         }
 
         cardDayMood.setOnClickListener {
             loadMusic(2)  // Index 2 = Day Mood
-            playMusic()   // Langsung play
+            playMusic()
+        }
+
+        cardDeepStudyZone.setOnClickListener {
+            loadMusic(3)  // Index 3 = Deep Study Zone
+            playMusic()
+        }
+
+        cardDaylightEnergy.setOnClickListener {
+            loadMusic(4)  // Index 4 = Daylight Energy
+            playMusic()
+        }
+
+        cardNightChill.setOnClickListener {
+            loadMusic(5)  // Index 5 = Night Chill
+            playMusic()
+        }
+
+        cardHappyDay.setOnClickListener {
+            loadMusic(6)  // Index 6 = Happy Day
+            playMusic()
+        }
+
+        cardBrightDawn.setOnClickListener {
+            loadMusic(7)  // Index 7 = Bright Dawn
+            playMusic()
+        }
+
+        cardQuietStudy.setOnClickListener {
+            loadMusic(8)  // Index 8 = Quiet Study
+            playMusic()
         }
     }
 

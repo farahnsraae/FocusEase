@@ -33,6 +33,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var txtProfileName: TextView
     private lateinit var txtProfileEmail: TextView
     private lateinit var imgProfile: ImageView
+    private lateinit var txtCurrentLanguage: TextView  // ✅ TAMBAHAN BARU
 
     private val PICK_IMAGE_REQUEST = 1
     private val PERMISSION_REQUEST_CODE = 100
@@ -50,9 +51,11 @@ class ProfileActivity : AppCompatActivity() {
         txtProfileName = findViewById(R.id.txtProfileName)
         txtProfileEmail = findViewById(R.id.txtProfileEmail)
         imgProfile = findViewById(R.id.imgProfile)
+        txtCurrentLanguage = findViewById(R.id.txtCurrentLanguage)  // ✅ TAMBAHAN BARU
 
         loadUserData()
         loadProfileImage()
+        updateLanguageDisplay()  // ✅ TAMBAHAN BARU
 
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
         btnBack.setOnClickListener {
@@ -120,6 +123,17 @@ class ProfileActivity : AppCompatActivity() {
         val config = Configuration()
         config.setLocale(locale)
         resources.updateConfiguration(config, resources.displayMetrics)
+    }
+
+    // ✅ FUNGSI BARU: Update tampilan bahasa
+    private fun updateLanguageDisplay() {
+        val languageCode = sharedPreferences.getString("language", "en") ?: "en"
+        val languageName = when (languageCode) {
+            "id" -> "Indonesia"
+            "ko" -> "한국어"
+            else -> "English"
+        }
+        txtCurrentLanguage.text = languageName
     }
 
     private fun getLocalizedString(key: String): String {
@@ -404,12 +418,12 @@ class ProfileActivity : AppCompatActivity() {
             Toast.makeText(this, "${getLocalizedString("theme_changed")} ${themes[which]}", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
 
-            // PERBAIKAN: Tetap di ProfileActivity dengan recreate()
             recreate()
         }
         builder.show()
     }
 
+    // ✅ FUNGSI INI SUDAH DIPERBAIKI
     private fun showLanguageDialog() {
         val languages = arrayOf("English", "Indonesia", "한국어 (Korea)")
         val languageCodes = arrayOf("en", "id", "ko")
@@ -431,11 +445,13 @@ class ProfileActivity : AppCompatActivity() {
             config.setLocale(locale)
             resources.updateConfiguration(config, resources.displayMetrics)
 
+            // ✅ UPDATE tampilan bahasa
+            updateLanguageDisplay()
+
             Toast.makeText(this, "Language changed to ${languages[which]}", Toast.LENGTH_SHORT).show()
 
             dialog.dismiss()
 
-            // PERBAIKAN: Tetap di ProfileActivity dengan recreate()
             recreate()
         }
         builder.show()
@@ -498,9 +514,11 @@ class ProfileActivity : AppCompatActivity() {
         builder.show()
     }
 
+    // ✅ FUNGSI INI SUDAH DIPERBAIKI
     override fun onResume() {
         super.onResume()
         loadUserData()
         loadProfileImage()
+        updateLanguageDisplay()  // ← TAMBAHAN BARU
     }
 }

@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <application
         android:allowBackup="true"
@@ -67,22 +69,28 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
-        <!-- Alarm Receiver -->
+        <!-- Pomodoro Timer Activity -->
+        <activity
+            android:name=".ui.pomodoro.PomodoroTimerActivity"
+            android:exported="false" />
+
+        <!-- Pomodoro Settings Activity -->
+        <activity
+            android:name=".ui.pomodoro.PomodoroSettingsActivity"
+            android:exported="false" />
+
+        <!-- Pomodoro Service -->
+        <service
+            android:name=".ui.pomodoro.PomodoroService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <!-- ✅ ALARM RECEIVER - INI YANG KURANG! -->
         <receiver
             android:name=".AlarmReceiver"
             android:enabled="true"
             android:exported="false">
-            <intent-filter>
-                <action android:name="STOP_ALARM" />
-                <action android:name="SNOOZE_ALARM" />
-            </intent-filter>
-        </receiver>
-
-        <!-- Boot Receiver -->
-        <receiver
-            android:name=".BootReceiver"
-            android:enabled="true"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

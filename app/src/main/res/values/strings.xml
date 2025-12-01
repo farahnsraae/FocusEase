@@ -17,6 +17,18 @@
     <string name="date_25">25</string>
     <string name="day_25">Sat</string>
 
+    <!-- Pomodoro Activity -->
+    <string name="back">Back</string>
+    <string name="system">System</string>
+    <string name="pomodoro_adaptif">Pomodoro Adaptif</string>
+    <string name="durasi_fokus">Durasi Fokus</string>
+    <string name="menit">Menit</string>
+    <string name="duration_25">25</string>
+    <string name="duration_45">45</string>
+    <string name="duration_90">90</string>
+    <string name="default_duration">5 Menit</string>
+    <string name="mulai">Mulai</string>
+
     <!-- Profile -->
     <string name="profile">Profile</string>
     <string name="edit_profile">Edit Profile</string>

@@ -42,25 +42,21 @@ android {
 }
 
 dependencies {
-    // ✅ Gunakan versi dari Gradle Version Catalog (libs.*)
+    // Core dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    // ✅ Tambahan library manual
+    // Additional libraries
     implementation("androidx.cardview:cardview:1.0.0")
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
+    implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
+    // Test dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation("de.hdodenhof:circleimageview:3.1.0")
 }

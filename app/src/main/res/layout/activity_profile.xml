@@ -21,11 +21,12 @@
             <!-- Back Button -->
             <ImageButton
                 android:id="@+id/btnBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_alignParentStart="true"
                 android:background="@android:color/transparent"
                 android:src="@android:drawable/ic_menu_revert"
+                android:padding="12dp"
                 android:contentDescription="Back" />
 
             <!-- Title -->
@@ -56,14 +57,14 @@
                 <!-- Edit Photo Button -->
                 <ImageButton
                     android:id="@+id/btnEditPhoto"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_gravity="bottom|end"
-                    android:layout_marginEnd="-5dp"
-                    android:layout_marginBottom="-5dp"
+                    android:layout_marginEnd="-10dp"
+                    android:layout_marginBottom="-10dp"
                     android:background="@drawable/bg_circle_purple"
                     android:src="@android:drawable/ic_menu_edit"
-                    android:padding="8dp"
+                    android:padding="12dp"
                     android:contentDescription="Edit Photo" />
             </FrameLayout>
         </RelativeLayout>
@@ -279,7 +280,9 @@
                 android:textSize="16sp"
                 android:layout_marginStart="16dp" />
 
+            <!-- ✅ TAMBAHKAN ID INI -->
             <TextView
+                android:id="@+id/txtCurrentLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="English"

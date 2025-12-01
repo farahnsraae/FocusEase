@@ -41,9 +41,17 @@
             android:layout_height="1dp"
             android:layout_weight="1" />
 
-        <View
+        <!-- Menu Button (Titik Tiga Vertikal) -->
+        <ImageView
+            android:id="@+id/btnMenu"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:src="@drawable/ic_more_vert"
+            android:padding="8dp"
+            android:contentDescription="Menu"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="#000000" />
     </LinearLayout>
 
     <!-- Alarms List -->
@@ -54,7 +62,8 @@
         android:layout_below="@id/topBar"
         android:layout_above="@id/addNewSection"
         android:padding="24dp"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        android:contentDescription="Alarms list">
 
         <LinearLayout
             android:id="@+id/alarmsContainer"

@@ -182,7 +182,7 @@ class MainActivity : AppCompatActivity() {
         Log.d("MAIN_DEBUG", "Final display: '$finalText'")
 
         // TOAST untuk memastikan fungsi ini dipanggil
-        Toast.makeText(this, "Welcome : s $finalText", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Welcome : $finalText", Toast.LENGTH_LONG).show()
     }
 
     private fun updateDateItemsView() {

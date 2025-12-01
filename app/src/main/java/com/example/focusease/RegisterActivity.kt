@@ -21,6 +21,7 @@ class RegisterActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
         userPrefs = UserPreferences(this)
 
+        // Listener untuk tombol Register
         binding.btnRegister.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
@@ -47,6 +48,13 @@ class RegisterActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
+        }
+
+        // Listener untuk TextView "Sign in"
+        binding.tvSignInLink.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
